@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
+    
     <div className={styles.container}>
       <Head>
         <title>Spatial Project</title>
@@ -11,31 +12,114 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Spatial Project 2021</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/credits">Credits</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <main className={styles.main}>
+
+
         <h1 className={styles.title}>
-          Spatial Project
+          Temporal Forest Cover Change
         </h1>
         <br/>
-        <div id="carouselExampleIndicators" class="carousel slide w-50"  data-bs-ride="carousel" height = "200px">
+
+
+        <div id="carouselExampleIndicators" class="carousel slide w-25"  data-bs-ride="carousel" height = "200px" >
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 3"></button>
+          
           </div>
           <div class="carousel-inner">
+
             <div class="carousel-item active">
-              <img src="/images/Siskiyou_18_20.jpg" class="d-block w-100" alt="..."/>
+              <img src="/images/Siskiyou_cropped/SiskiyouCA_12.png" class="d-block w-100" alt="..."/>
               <div class="carousel-caption d-none d-md-block">
-                <h4 class="text-warning">Siskiyou 18-20 deforest:0.15% afforest:0.83%</h4>
+                <h4 class="text-warning">Siskiyou 2012</h4>
               </div>
             </div>
+
+                        
             <div class="carousel-item">
-              <img src="/images/Dubai_11272000.jpg" class="d-block w-100" alt="..."/>
+              <img src="/images/Siskiyou_overlay/Siskiyou_12_14.jpg" class="d-block w-100" alt="..."/>
               <div class="carousel-caption d-none d-md-block">
-                <h4  class="text-primary">Dubai 2018</h4>
+                <h4 class="text-warning">Siskiyou 12-14 deforest:1.41% afforest: 0.01%</h4>
               </div>
-              
             </div>
+
+            <div class="carousel-item">
+              <img src="/images/Siskiyou_cropped/SiskiyouCA_14.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Siskiyou 2014</h4>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="/images/Siskiyou_overlay/Siskiyou_14_16.jpg" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Siskiyou 14-16 deforest: 0.27% afforest: 0.74%</h4>
+              </div>
+            </div>
+
+
+            <div class="carousel-item">
+              <img src="/images/Siskiyou_cropped/SiskiyouCA_16.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Siskiyou 2016</h4>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="/images/Siskiyou_overlay/Siskiyou_16_18.jpg" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Siskiyou 16-18 deforest: 0.44% afforest: 0.44%</h4>
+              </div>
+            </div>
+
+
+            <div class="carousel-item">
+              <img src="/images/Siskiyou_cropped/SiskiyouCA_18.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Siskiyou 2018</h4>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="/images/Siskiyou_overlay/Siskiyou_18_20.jpg" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Siskiyou 18-20 deforest: 0.15% afforest: 0.83%</h4>
+              </div>
+            </div>
+
+
+            <div class="carousel-item">
+              <img src="/images/Siskiyou_cropped/SiskiyouCA_20.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Siskiyou 2020</h4>
+              </div>
+            </div>
+
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -46,6 +130,105 @@ export default function Home() {
             <span class="visually-hidden">Next</span>
           </button>
       </div>
+
+      <br/>
+
+      <div id="carouselExampleIndicators2" class="carousel slide w-25"  data-bs-ride="carousel" height = "200px">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="3" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="4" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="5" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="6" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="7" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="8" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="9" aria-label="Slide 3"></button>
+          
+          </div>
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <img src="/images/Humboldt_cropped/HumboldtCA_12.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 2012</h4>
+              </div>
+            </div>
+
+                        
+            <div class="carousel-item">
+              <img src="/images/Humboldt_overlay/Humboldt_12_14.jpg" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 12-14 deforest: 0.35% afforest: 0.03%</h4>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="/images/Humboldt_cropped/HumboldtCA_14.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 2014</h4>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="/images/Humboldt_overlay/Humboldt_14_16.jpg" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 14-16 deforest: 0.14% afforest: 0.32%</h4>
+              </div>
+            </div>
+
+
+            <div class="carousel-item">
+              <img src="/images/Humboldt_cropped/HumboldtCA_16.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 2016</h4>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="/images/Humboldt_overlay/Humboldt_16_18.jpg" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 16-18 deforest: 0.42% afforest: 0.02%</h4>
+              </div>
+            </div>
+
+
+            <div class="carousel-item">
+              <img src="/images/Humboldt_cropped/HumboldtCA_18.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 2018</h4>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="/images/Humboldt_overlay/Humboldt_18_20.jpg" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 18-20 deforest: 0.16% afforest: 0.78%</h4>
+              </div>
+            </div>
+
+
+            <div class="carousel-item">
+              <img src="/images/Humboldt_cropped/HumboldtCA_20.png" class="d-block w-100" alt="..."/>
+              <div class="carousel-caption d-none d-md-block">
+                <h4 class="text-warning">Humboldt 2020</h4>
+              </div>
+            </div>
+
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+
+
       </main>
     </div>
   )

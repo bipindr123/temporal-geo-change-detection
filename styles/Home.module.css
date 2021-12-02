@@ -1,5 +1,4 @@
 .container {
-  padding: 0 2rem;
 }
 
 .main {
@@ -10,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: blanchedalmond;
 }
 
 .footer {
@@ -42,9 +42,19 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 2rem;
+  font-size: 1rem;
+  font-family: cursive;
+  text-decoration-line: underline
 }
 
+
+.title2 {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  font-family: cursive;
+  text-decoration-line: underline
+}
 .title,
 .description {
   text-align: center;
