@@ -14,7 +14,7 @@ filename = "HumboldtCA_"
 final_directory1 = "Humboldt_afforest_final/"
 filenames = []
 
-def detect_change(im1,im2):
+def find_changes(im1,im2):
     image1_path = directory+im1
     image2_path = directory+im2
     final_directory2 = final_directory1+im1.split(".")[0]+"_"+im2.split(".")[0]+"_"
@@ -24,43 +24,43 @@ def detect_change(im1,im2):
     print('[INFO] Importing Librairies ...')
 
 
-    def find_vector_set(diff_image, new_size):
+    def find_vectorSet(diff_image, new_size):
     
         i = 0
         j = 0
-        vector_set = np.zeros((int(new_size[0] * new_size[1] / 25),25))
-        while i < vector_set.shape[0]:
+        vectorSet = np.zeros((int(new_size[0] * new_size[1] / 25),25))
+        while i < vectorSet.shape[0]:
             while j < new_size[1]:
                 k = 0
                 while k < new_size[0]:
                     block   = diff_image[j:j+5, k:k+5]
                     feature = block.ravel()
-                    vector_set[i, :] = feature
+                    vectorSet[i, :] = feature
                     k = k + 5
                 j = j + 5
             i = i + 1
     
-        mean_vec   = np.mean(vector_set, axis = 0)
+        meanVector   = np.mean(vectorSet, axis = 0)
         # Mean normalization
-        vector_set = vector_set - mean_vec   
-        return vector_set, mean_vec
+        vectorSet = vectorSet - meanVector   
+        return vectorSet, meanVector
 
-    def find_FVS(EVS, diff_image, mean_vec, new):
+    def searchFVS(EVS, diff_image, meanVector, new):
     
         i = 2
-        feature_vector_set = []
+        feature_vectorSet = []
     
         while i < new[1] - 2:
             j = 2
             while j < new[0] - 2:
                 block = diff_image[i-2:i+3, j-2:j+3]
                 feature = block.flatten()
-                feature_vector_set.append(feature)
+                feature_vectorSet.append(feature)
                 j = j+1
             i = i+1
     
-        FVS = np.dot(feature_vector_set, EVS)
-        FVS = FVS - mean_vec
+        FVS = np.dot(feature_vectorSet, EVS)
+        FVS = FVS - meanVector
         print ("[INFO] Feature vector space size", FVS.shape)
         return FVS
 
@@ -70,9 +70,9 @@ def detect_change(im1,im2):
         output = kmeans.predict(FVS)
         count  = Counter(output)
     
-        least_index = min(count, key = count.get)
+        min_index = min(count, key = count.get)
         change_map  = np.reshape(output,(new[1] - 4, new[0] - 4))
-        return least_index, change_map
+        return min_index, change_map
         
 
     # Read Images
@@ -104,8 +104,8 @@ def detect_change(im1,im2):
     # cv2.waitKey(0)
 
     # diff_imageX = abs(image1 - image2)
-    bitwiseAnd = cv2.bitwise_and(image1, image2)
-    diff_imageX = image2 - bitwiseAnd
+    bitwise_And = cv2.bitwise_and(image1, image2)
+    diff_imageX = image2 - bitwise_And
 
     cv2.imwrite(final_directory2+'difference.jpg', diff_imageX)
     end = time.time()
@@ -115,27 +115,27 @@ def detect_change(im1,im2):
     print('[INFO] Performing PCA ...')
     start = time.time()
     pca = PCA()
-    vector_setX, mean_vecX=find_vector_set(diff_imageX, new_size)
+    vectorSetX, meanVectorX=find_vectorSet(diff_imageX, new_size)
 
-    pca.fit(vector_setX)
+    pca.fit(vectorSetX)
     EVS = pca.components_
     end = time.time()
     print('[INFO] Performing PCA took {} seconds'.format(end-start))
 
     print('[INFO] Building Feature Vector Space ...')
     start = time.time()
-    FVS = find_FVS(EVS, diff_imageX, mean_vecX, new_size)
+    FVS = searchFVS(EVS, diff_imageX, meanVectorX, new_size)
     components = 2
     end = time.time()
     print('[INFO] Building Feature Vector Space took {} seconds'.format(end-start))
 
     print('[INFO] Clustering ...')
     start = time.time()
-    least_index, change_map = clustering(FVS, components, new_size)
+    min_index, change_map = clustering(FVS, components, new_size)
     end = time.time()
     print('[INFO] Clustering took {} seconds'.format(end-start))
 
-    change_map[change_map == least_index] = 255
+    change_map[change_map == min_index] = 255
     change_map[change_map != 255] = 0
     change_map = change_map.astype(np.uint8)
 
@@ -162,4 +162,4 @@ for i in range(10,21):
 
 for i in range(len(filenames)-1):
     print(filenames[i],filenames[i+1])
-    detect_change(filenames[i],filenames[i+1])
+    find_changes(filenames[i],filenames[i+1])
