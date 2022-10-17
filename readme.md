@@ -1,6 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Temporal afforestation and deforestation geo change detection in satellite images
+## About <a name = "about"></a>
 
-## Getting Started
+We aim to develop an algorithm that shows the percentage change of forest cover in terms of afforestation and deforestation over any two given periods of time over a specified area. (Python, Next JS, OpenCV, image processing, machine learning)
+
+Frontend Web app made with NextJS framework and backend with python.
+
+Used KMeans, PCA, OpenCV to extract features display them.
+
+
+## Output <a name = "Output"></a>
+
+### Data Collection
+![Kiku](./pics/datacollection.jpg)
+
+### Working and Web App
+![Kiku](./pics/o1.jpg)
+![Kiku](./pics/o2.jpg)
+![Kiku](./pics/o3.jpg)
+![Kiku](./pics/o4.jpg)
+![Kiku](./pics/o5.jpg)
+
+
+
+## Getting Started <a name = "getting_started"></a>
 
 First, run the development server:
 
@@ -12,23 +34,28 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Prerequisites
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+What things you need to install the software and how to install them.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+Give examples
+```
 
-## Learn More
+### Installing
 
-To learn more about Next.js, take a look at the following resources:
+A step by step series of examples that tell you how to get a development env running.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Say what the step will be
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+Give the example
+```
 
-## Deploy on Vercel
+And repeat
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+until finished
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+End with an example of getting some data out of the system or using it for a little demo.
